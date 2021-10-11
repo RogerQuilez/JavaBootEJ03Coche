@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import utils.Utils;
+
 public class List {
 
 	public static void main(String[] args) {
@@ -17,16 +19,9 @@ public class List {
 		try (Connection con = DriverManager.getConnection(cadenaConexion, user, pass);){
 			PreparedStatement sentencia = con.prepareStatement("SELECT * FROM COCHE");
 			ResultSet rs = sentencia.executeQuery();
-			while (rs.next()) {
-				System.out.print(rs.getInt("ID"));
-				System.out.print(" - "); 
-				System.out.print(rs.getString("MARCA"));
-				System.out.print(" - "); 
-				System.out.print(rs.getString("MODEL"));
-				System.out.print(" - "); 
-				System.out.print(rs.getInt("KM"));
-				System.out.println();
-			}
+			
+			Utils.printResult(rs);
+			
 		} catch (SQLException e) {
 			System.out.println("Error al realizar el listado de productos");
 			System.out.println(e.getMessage());
