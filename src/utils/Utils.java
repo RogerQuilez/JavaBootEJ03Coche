@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Utils {
+	
 
 	public static Connection getConnection() throws SQLException{
 		
@@ -14,6 +15,7 @@ public class Utils {
 		String pass = "";
 		
 		Connection con = DriverManager.getConnection(cadenaConexion, user, pass);
+		
 		return con;
 		
 	}

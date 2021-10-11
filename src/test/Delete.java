@@ -4,20 +4,17 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import utils.Utils;
+
 public class Delete {
 
 	public static void main(String[] args) {
 		
-		String cadenaConexion = "jdbc:mysql://localhost:3306/bbdd";
-		String user = "root";
-		String pass = "";
-				
-		
-		try (Connection con = DriverManager.getConnection(cadenaConexion, user, pass);){
+		try (Connection con = Utils.getConnection()){
 			
 			String sql = "DELETE FROM COCHE WHERE ID=?"; 
 			
-			int id = 1;
+			int id = 2;
 			
 			System.out.println("Se va a ejecutar la siguiente sentencia SQL:");
 			System.out.println(sql);
