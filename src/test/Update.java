@@ -1,18 +1,15 @@
 package test;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
+import utils.Utils;
 
 public class Update {
 
 	public static void main(String[] args) {		
-		
-		String cadenaConexion = "jdbc:mysql://localhost:3306/bbdd";
-		String user = "root";
-		String pass = "";
 			
-		try (Connection con = DriverManager.getConnection(cadenaConexion, user, pass);){
+		try (Connection con = Utils.getConnection()){
 			
 			String sql = "update COCHE set MARCA=?, MODEL=?, KM=? WHERE ID=?";
 			

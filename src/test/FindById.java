@@ -1,6 +1,5 @@
 package test;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,11 +10,7 @@ public class FindById {
 
 	public static void main(String[] args) {
 		
-		String cadenaConexion = "jdbc:mysql://localhost:3306/bbdd";
-		String user = "root";
-		String pass = "";
-		
-		try (Connection con = DriverManager.getConnection(cadenaConexion, user, pass)){
+		try (Connection con = Utils.getConnection()){
 			
 			PreparedStatement sentencia = con.prepareStatement("SELECT * FROM COCHE WHERE ID=?");
 			sentencia.setInt(1, 2);
