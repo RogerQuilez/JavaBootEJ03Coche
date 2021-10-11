@@ -32,10 +32,10 @@ public class Insert {
 			sentencia.setInt(3, km);
 			
 			int afectados = sentencia.executeUpdate();
-			System.out.println("Sentencia SQL ejecutada con éxito");
+			System.out.println("Sentencia SQL ejecutada con Ã©xito");
 			System.out.println("Registros afectados: "+afectados);
 		} catch (SQLException e) {
-			System.out.println("Error al añadir una nueva persona");
+			System.out.println("Error al aï¿½adir una nueva persona");
 			System.out.println(e.getMessage());
 		}
 	}

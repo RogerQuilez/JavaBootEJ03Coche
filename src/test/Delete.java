@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import utils.Utils;
 
 public class Delete {
-	
+
 	public static void main(String[] args) {
 		
 		try (Connection con = Utils.getConnection()){
@@ -22,7 +22,7 @@ public class Delete {
 			sentencia.setInt(1, id);
 			
 			int afectados = sentencia.executeUpdate();
-			System.out.println("Sentencia SQL ejecutada con �xito");
+			System.out.println("Sentencia SQL ejecutada con éxito");
 			System.out.println("Registros afectados: "+afectados);
 		} catch (SQLException e) {
 			System.out.println("Error al borrar el cliente");
