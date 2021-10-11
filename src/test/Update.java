@@ -32,7 +32,7 @@ public class Update {
 			System.out.println("Sentencia SQL ejecutada con éxito");
 			System.out.println("Registros afectados: "+afectados);
 		} catch (SQLException e) {
-			System.out.println("Error al a�adir nuevo cliente");
+			System.out.println("Error al añadir nuevo cliente");
 			System.out.println(e.getMessage());
 		}		
 	}
